@@ -108,8 +108,19 @@ noclip.TextScaled = true
 noclip.TextSize = 14.000
 noclip.TextWrapped = true
 
+local statusLabel = Instance.new("TextLabel")
+statusLabel.Size = UDim2.new(0, 44, -0.5, 28)
+statusLabel.Position = UDim2.new(0, 0, 0.85, 0)
+statusLabel.BackgroundTransparency = 1
+statusLabel.Text = "Status: Disabled"
+statusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+statusLabel.TextSize = 14
+statusLabel.Font = Enum.Font.Gotham
+statusLabel.Parent = frame
 
 speeds = 1
+local noclipEnabled = false
+local connection = nil
 
 local speaker = game:GetService("Players").LocalPlayer
 
