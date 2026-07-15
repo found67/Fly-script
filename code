@@ -108,6 +108,7 @@ noclip.TextScaled = true
 noclip.TextSize = 14.000
 noclip.TextWrapped = true
 
+
 speeds = 1
 
 local speaker = game:GetService("Players").LocalPlayer
