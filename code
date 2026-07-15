@@ -455,3 +455,53 @@ mini2.MouseButton1Click:Connect(function()
 	main.Frame.BackgroundTransparency = 0 
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 end)
+
+local function toggleNoclip()
+    noclipEnabled = not noclipEnabled
+    
+    if noclipEnabled then
+        toggleButton.Text = "Disable Noclip"
+        toggleButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+        statusLabel.Text = "Status: ENABLED"
+        statusLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+        
+        connection = RunService.Stepped:Connect(function()
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                for _, part in pairs(character:GetDescendants()) do
+                    if part:IsA("BasePart") then
+                        part.CanCollide = false
+                    end
+                end
+            end
+        end)
+    else
+        toggleButton.Text = "Enable Noclip"
+        toggleButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+        statusLabel.Text = "Status: Disabled"
+        statusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+        
+        if connection then
+            connection:Disconnect()
+            connection = nil
+        end
+        
+        -- Reset collision when disabled
+        if character then
+            for _, part in pairs(character:GetDescendants()) do
+                if part:IsA("BasePart") and part.Name ~= "HumanoidRootPart" then
+                    part.CanCollide = true
+                end
+            end
+        end
+    end
+end
+
+-- Button Click
+toggleButton.MouseButton1Click:Connect(toggleNoclip)
+
+-- Reconnect on character respawn
+player.CharacterAdded:Connect(function(newChar)
+    character = newChar
+end)
+
+print("Noclip GUI loaded! Press the button to toggle.")
