@@ -471,13 +471,13 @@ mini2.MouseButton1Click:Connect(function()
 end)
 
 local function toggleNoclip()
-    noclipEnabled = not noclipEnabled
+    noclip = not noclip
     
-    if noclipEnabled then
-        toggleButton.Text = "Disable Noclip"
-        toggleButton.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
-        statusLabel.Text = "Status: ENABLED"
-        statusLabel.TextColor3 = Color3.fromRGB(0, 255, 0)
+    if noclip then
+        noclip.Text = "Disable Noclip"
+        noclip.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
+        statu.Text = "ENABLED"
+        statu.TextColor3 = Color3.fromRGB(0, 255, 0)
         
         connection = RunService.Stepped:Connect(function()
             if character and character:FindFirstChild("HumanoidRootPart") then
