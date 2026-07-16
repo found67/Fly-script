@@ -115,7 +115,7 @@ statu.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
 statu.Position = UDim2.new(0.469327301, 0, -0.5, 0)
 statu.Size = UDim2.new(0, 100, 0, 28)
 statu.Font = Enum.Font.SourceSans
-statu.Text = "false"
+statu.Text = "disable"
 statu.TextColor3 = Color3.fromRGB(0, 0, 0)
 statu.TextScaled = true
 statu.TextSize = 14.000
@@ -474,7 +474,7 @@ local function toggleNoclip()
     noclip = not noclip
     
     if noclip then
-        noclip.Text = "Disable Noclip"
+        noclip.Text = "Noclip"
         noclip.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
         statu.Text = "ENABLED"
         statu.TextColor3 = Color3.fromRGB(0, 255, 0)
@@ -489,10 +489,10 @@ local function toggleNoclip()
             end
         end)
     else
-        toggleButton.Text = "Enable Noclip"
-        toggleButton.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
-        statusLabel.Text = "Status: Disabled"
-        statusLabel.TextColor3 = Color3.fromRGB(255, 100, 100)
+        noclip.Text = "Noclip"
+        noclip.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+        statu.Text = "DiSABLED"
+        statu.TextColor3 = Color3.fromRGB(255, 100, 100)
         
         if connection then
             connection:Disconnect()
@@ -511,11 +511,9 @@ local function toggleNoclip()
 end
 
 -- Button Click
-toggleButton.MouseButton1Click:Connect(toggleNoclip)
+toggleButton.MouseButton1Click:Connect(Noclip)
 
 -- Reconnect on character respawn
 player.CharacterAdded:Connect(function(newChar)
     character = newChar
 end)
-
-print("Noclip GUI loaded! Press the button to toggle.")
