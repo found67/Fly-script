@@ -7,7 +7,6 @@ local TextLabel = Instance.new("TextLabel")
 local plus = Instance.new("TextButton")
 local speed = Instance.new("TextLabel")
 local mine = Instance.new("TextButton")
-local noclip = Instance.new("TextButton")
 
 main.Name = "main"
 main.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -95,19 +94,6 @@ mine.TextColor3 = Color3.fromRGB(0, 0, 0)
 mine.TextScaled = true
 mine.TextSize = 14.000
 mine.TextWrapped = true
-
-noclip.Name = "noclip"
-noclip.Parent = Frame
-noclip.BackgroundColor3 = Color3.fromRGB(133, 145, 255)
-noclip.Position = UDim2.new(0.231578946, 0, -0.5, 0)
-noclip.Size = UDim2.new(0, 45, 0, 28)
-noclip.Font = Enum.Font.SourceSans
-noclip.Text = "noclip"
-noclip.TextColor3 = Color3.fromRGB(0, 0, 0)
-noclip.TextScaled = true
-noclip.TextSize = 14.000
-noclip.TextWrapped = true
-
 
 speeds = 1
 
