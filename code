@@ -111,10 +111,10 @@ noclip.TextWrapped = true
 
 TextLabe2.Parent = Frame
 TextLabe2.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
-TextLabe2.Position = UDim2.new(0.469327301, 0, -0.5, 0)
+TextLabe2.Position = UDim2.new(0.469327301, 0, -0.7, 0)
 TextLabe2.Size = UDim2.new(0, 100, 0, 28)
 TextLabe2.Font = Enum.Font.SourceSans
-TextLabe2.Text = "FLY 67"
+TextLabe2.Text = "false"
 TextLabe2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabe2.TextScaled = true
 TextLabe2.TextSize = 14.000
